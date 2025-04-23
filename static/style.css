@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature.css');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url('/static/Banner.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Noto Sans KR', Arial, sans-serif;
+  color: #fff; /* 기본 글씨 흰색으로 설정 */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  text-align: center;
+}
+
+.logo-img {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+.x-img {
+  height: 20px;
+  opacity: 0.3;
+}
+
+/* 📌 가운데 정렬된 예약/프로모션 안내 텍스트 영역 */
+.header-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  gap: 40px;
+  text-align: center;
+}
+
+.header-left, .header-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.header-left h2 {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.header-right h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #fff;
+}
+
+.header-right p {
+  margin: 6px 0 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.promo-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.promo-left, .promo-right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.instructions, .terms-section {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #222;
+  box-sizing: border-box;
+}
+
+.instructions h2, .terms-section h2 {
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.instructions ol, .terms-section p {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* 📱 반응형 미디어 쿼리 */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 60px;
+  }
+
+  .x-img {
+    height: 16px;
+  }
+
+  .promo-wrapper {
+    flex-direction: column;
+  }
+
+  .promo-left, .promo-right {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .instructions, .terms-section {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .header-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-left h2,
+  .header-right h2 {
+    font-size: 1.6rem;
+  }
+
+  .header-right p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .instructions, .terms-section {
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .logo-bar {
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .logo-img {
+    width: 50px;
+  }
+
+  .x-img {
+    height: 12px;
+  }
+
+  .header-left h2,
+  .header-right h2 {
+    font-size: 1.4rem;
+  }
+
+  .header-right p {
+    font-size: 0.85rem;
+  }
+}
