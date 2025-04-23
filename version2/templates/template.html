@@ -3,151 +3,305 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visa x AYANA 프로모션</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+  <title>Ayana Promotion Page</title>
   <style>
-    :root {
-      --primary: #1e3a8a;
-      --gray: #f5f5f5;
-      --dark: #222;
-    }
-    * {
-      box-sizing: border-box;
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    @import url('https://cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature.css');
+
+    body {
       margin: 0;
       padding: 0;
-    }
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Noto Sans KR', Arial, sans-serif;
       background: white;
-      color: var(--dark);
-      line-height: 1.6;
+      color: #000;
     }
-    header {
-      background: url('/static/Banner.jpg') center/cover no-repeat;
-      height: 90vh;
+
+    .container {
+      width: 90%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .container section {
+      margin-bottom: 5%;
+    }
+
+    /* Header & Hero Section */
+    .logo-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .logo-img {
+      width: 80px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .hero {
+      width: 100%;
+      aspect-ratio: 16 / 4;
+      background: url('/static/Banner.jpg') no-repeat center center;
+      background-size: cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px;
+      margin-top: 30px;
+      color: white;
     }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+
+    /* Instructions & Terms */
+    .instructions{
+      width: 70%;
+      max-width: 70%;
+      margin: 40px auto;
     }
-    header p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
+    .terms-section {
+      width: 90%;
+      max-width: 90%;
+      margin: 40px auto;
     }
+
+    .instructions h2,
+    .hotels h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .step {
+      padding: 14px 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #000;
+    }
+
+    .divider {
+      border-bottom: 1px solid #ccc;
+      margin: 0;
+      height: 0;
+    }
+
+    /* CTA Button */
+    .cta {
+      text-align: center;
+      margin-top: 5%;
+    }
+
     .cta-button {
-      background: white;
-      color: var(--primary);
-      padding: 14px 32px;
+      background: black;
+      color: white;
+      padding: 12px 28px;
+      border: none;
       border-radius: 999px;
       font-size: 1rem;
-      font-weight: 600;
+      cursor: pointer;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
     }
+
     .cta-button:hover {
-      background: #eee;
+      background: #333;
     }
-    section {
-      max-width: 1000px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-    section h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .steps, .hotels {
-      display: grid;
-      gap: 24px;
-    }
-    .steps {
-      grid-template-columns: 1fr;
-    }
-    .step-box {
-      background: var(--gray);
-      padding: 24px;
-      border-radius: 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
+
+    /* Hotel List */
     .hotels {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      width: 90%;
+      max-width: 90%;
+      margin: 40px auto;
     }
-    .hotel-card {
+
+    .hotel-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 200%;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+
+    .hotel-item {
+      max-width: 70%;
       text-align: center;
+      border-radius: 16px;
+      padding: 4px 0;
+      color: #000;
     }
-    .hotel-card img {
-      width: 100%;
-      border-radius: 12px;
+
+    .hotel-item img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
       object-fit: cover;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
     }
-    .hotel-card p {
+
+    .hotel-item p {
       margin-top: 12px;
-      font-weight: 500;
+      font-size: 1rem;
+      color: #000;
     }
-    footer {
-      background: var(--gray);
-      padding: 40px 20px;
-      font-size: 0.95rem;
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .logo-img {
+        width: 60px;
+      }
+
+      .hotel-item img {
+        width: 110px;
+        height: 110px;
+      }
     }
-    footer p {
-      margin-bottom: 16px;
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 10px;
+      }
+
+      .logo-bar {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .logo-img {
+        width: 50px;
+      }
+
+      .hotel-item img {
+        width: 100px;
+        height: 100px;
+      }
     }
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>33% Visa 특별 프로모션</h1>
-    <p>AYANA 리조트에서만 제공되는 단독 혜택을 만나보세요</p>
-    <a href="#" class="cta-button">지금 예약하기</a>
-  </header>
+  <div class="container">
 
-  <section>
-    <h2>예약 방법</h2>
-    <div class="steps">
-      <div class="step-box"><strong>1단계:</strong> AYANA 공식 웹사이트 접속</div>
-      <div class="step-box"><strong>2단계:</strong> 체크인/체크아웃 날짜 선택</div>
-      <div class="step-box"><strong>3단계:</strong> 예약 코드 입력 (KB 프로모션 코드)</div>
-      <div class="step-box"><strong>4단계:</strong> 객실 카테고리 및 요금 옵션 선택</div>
-      <div class="step-box"><strong>5단계:</strong> KB Visa 카드로 결제</div>
-    </div>
-  </section>
+    <!-- ✅ 전체 헤더: 로고 + 히어로 배너 -->
+    <header class="page-header">
+      <!-- 로고 영역 -->
+      <div class="logo-bar">
+        <img src="/static/AYANA Resort Bali.png" alt="Ayana Logo" class="logo-img">
+        <img src="/static/KB.jpg" alt="KB Logo" class="logo-img">
+        <img src="/static/Visa.png" alt="Visa Logo" class="logo-img">
+      </div>
 
-  <section>
-    <h2>참여 호텔</h2>
-    <div class="hotels">
-      <div class="hotel-card">
-        <img src="/static/RIMBA by AYANA Bali.jpg" alt="RIMBA">
-        <p>RIMBA by AYANA Bali</p>
-      </div>
-      <div class="hotel-card">
-        <img src="/static/AYANA Resort Bali.jpg" alt="Resort">
-        <p>AYANA Resort Bali</p>
-      </div>
-      <div class="hotel-card">
-        <img src="/static/Ayana Segara.jpg" alt="Segara">
-        <p>Ayana Segara</p>
-      </div>
-      <div class="hotel-card">
-        <img src="/static/AYANA Villas Bali.jpg" alt="Villas">
-        <p>AYANA Villas Bali</p>
-      </div>
-    </div>
-  </section>
+      <!-- 배너 영역 -->
+      <section class="hero">
+        <h1>KB Visa카드 쓰고 아야나에서 진정한 휴식을 즐겨봐요</h1>
+        <div class="cta">
+          <a href="https://www.ayana.com/ko/bali/" target="_blank" class="cta-button">지금 예약하기</a>
+        </div>
+      </section>
+    </header>
 
-  <footer>
-    <p><strong>유의사항</strong></p>
-    <p>본 프로모션은 Visa카드를 통해 결제 시에만 적용됩니다. 예약 및 환불 정책은 호텔별로 상이할 수 있으며, 자세한 사항은 공식 웹사이트를 참고하시기 바랍니다.</p>
-    <p>문의: KB국민카드 고객센터 1588-1688</p>
-  </footer>
+    <!-- 🔻 Divider 추가 -->
+    <hr class="section-divider"/>
+
+    <!-- ✅ 예약 방법 -->
+    <section class="instructions">
+      <h2>프로모션 참여 방법</h2>
+      <div class="divider"></div>
+      <div class="step"><b>Step 1:</b> AYANA 웹사이트 <a href="https://www.ayana.com/ko/bali/" target="_blank">https://www.ayana.com/ko/bali/</a>로 이동</div>
+      <div class="divider"></div>
+      <div class="step"><b>Step 2:</b> "예약" 버튼 클릭하여 체크인 및 체크아웃 날짜 선택</div>
+      <div class="divider"></div>
+      <div class="step"><b>Step 3:</b> 지정된 필드에 예약코드(KB 프로모션코드) 입력</div>
+      <div class="divider"></div>
+      <div class="step"><b>Step 4:</b> 객실 카테고리 선택</div>
+      <div class="divider"></div>
+      <div class="step"><b>Step 5:</b> '요금선택' 하단에서 33% 할인이 적용된 옵션 선택</div>
+      <div class="divider"></div>
+      <div class="step"><b>Step 6:</b> 정보 입력하고 예약 완료</div>
+      <div class="divider"></div>
+      <div class="step"><b>Step 7:</b> 결제 섹션에 KB Visa 카드정보 입력하고 카드보증 완료</div>
+      <div class="divider"></div>
+      <div class="cta">
+        <a href="https://www.ayana.com/ko/bali/" target="_blank" class="cta-button">지금 예약하기</a>
+      </div>
+    </section>
+
+    <!-- 🔻 Divider 추가 -->
+    <hr class="section-divider"/>
+
+    <!-- ✅ 호텔 섹션 -->
+    <section class="hotels">
+      <h2>프로모션 이용 가능 호텔</h2>
+      <div class="hotel-list">
+        <div class="hotel-item">
+          <img src="/static/RIMBA by AYANA Bali.jpg" alt="RIMBA" />
+          <p>RIMBA by AYANA Bali</p>
+        </div>
+        <div class="hotel-item">
+          <img src="/static/AYANA Resort Bali.jpg" alt="Resort" />
+          <p>AYANA Resort Bali</p>
+        </div>
+        <div class="hotel-item">
+          <img src="/static/Ayana Segara.jpg" alt="Segara" />
+          <p>Ayana Segara</p>
+        </div>
+        <div class="hotel-item">
+          <img src="/static/AYANA Villas Bali.jpg" alt="Villas" />
+          <p>AYANA Villas Bali</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔻 Divider 추가 -->
+    <hr class="section-divider"/>
+
+    <!-- ✅ 유의사항 -->
+    <section class="terms-section">
+      <p><strong>[공통 유의사항]</strong><br>
+        - 이 행사 혜택은 Visa카드에서 제공합니다.<br>
+        - 각 제휴사 프로모션 혜택에 대한 제공조건 및 유의사항은 상세 페이지에서 확인 가능합니다.<br>
+        - 본 프로모션을 통한 혜택은 외화 결제 시에만 적용됩니다.<br>
+        - 현지에서 결제 전 KB국민 Visa카드 이용에 대해 말씀해주시기 바랍니다.<br>
+        - 각 제휴사 프로모션은 예산 소진 시 별도의 공지 없이 혜택 제공이 종료될 수 있으며, KB국민 Visa 카드 또는 제휴사의 사정으로 변경 또는 중단될 수 있습니다.<br>
+        - 예약 취소에 따른 환불 관련 규정은 상품옵션에 따라 다를 수 있으므로, 예약 시 환불 정책을 반드시 참고하십시오.<br>
+        - 취소 수수료는 제휴사 정책에 의해 결제한 카드로 청구되어 추가 요금은 전액 고객 부담입니다.<br>
+        - 프로모션 예약/이용 기간 내 예약 취소 건은 혜택 제공 대상에서 제외됩니다.<br>
+        - 본 프로모션을 통해 제공되는 혜택은 현금으로 교환될 수 없습니다.<br>
+      </p>
+      <p><strong>[금융소비자 보호법 관련 유의사항]</strong><br>
+        - 계약을 체결하기 전에 상품설명서와 약관을 확인하시기 바랍니다.<br>
+        - 상환능력에 비해 신용카드 사용액이 과도할 경우 귀하의 개인신용평점이 하락할 수 있습니다.<br>
+        - 개인신용평점 하락 시 금융거래 관련된 불이익이 발생할 수 있습니다.<br>
+        - 일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.<br>
+        - 신용카드 발급이 부적정한 경우 (개인신용평점 낮음, 연체금 보유 등) 카드발급이 제한될 수 있습니다.<br>
+        - 카드 이용대금과 이에 수반되는 모든 수수료를 지정된 대금 결제일에 상환합니다.<br>
+        - 금융소비자는 금소법 제19조 제1항에 따라 해당 상품 또는 서비스에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.<br>
+        *이 행사는 KB국민카드 영업정책과 제휴업체 사정 혹은 영업정책에 따라 변경 또는 중단될 수 있습니다.<br>
+        *문의: KB국민카드 고객센터(1588-1688)<br>
+        준법감시인 심의필 000000-00000-HPM (0000.00.00)<br>
+      </p>
+      <p><strong>[호텔 유의사항]</strong><br>
+        - 본 프로모션은 KB국민 Visa 카드를 소지한 고객이 해당 이벤트 페이지 내 예약 링크를 통해 각 호텔별 혜택 제공 조건을 충족하는 방식으로 결제한 경우에 한해 적용됩니다.<br>
+        - 호텔 예약, 결제방법 및 이용약관은 호텔별로 상이하므로 각 호텔 프로모션 페이지를 반드시 확인하시기 바랍니다.<br>
+        - 결제 후 사후 할인 적용이 불가하오니 현지에서 결제 전 KB국민 Visa카드 이용에 대해 말씀해주시기 바랍니다.<br>
+        - 호텔에 따라 실물 카드 제시가 필요할 수 있으니 유의하시기 바랍니다.<br>
+        - 체크카드 사용 시 일부 해외 가맹점에서 결제 제한이 있을 수 있으니 약관을 반드시 확인하시기 바랍니다.<br>
+        - 호텔 예약 결제와 투숙 기간 모두 한국 표준시(KST) 기준 프로모션 기간 내에 완료되어야 합니다.<br>
+        - 운영 시간, 이용 방법, 취소 규정은 호텔 규정을 따르며 호텔로 직접 문의해 주세요.<br>
+        - 본 혜택은 호텔 자체 프로모션, 할인, 쿠폰과 중복 적용되지 않습니다.<br>
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>

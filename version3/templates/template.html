@@ -12,70 +12,26 @@
       margin: 0;
       padding: 0;
       font-family: 'Noto Sans KR', Arial, sans-serif;
-      background: url('/static/Banner.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+      background: white;
+      color: #000;
     }
 
     .container {
       width: 90%;
-      max-width: 1200px;
+      max-width: 100%;
       margin: 0 auto;
       padding: 20px;
     }
 
-    .white-box {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      box-sizing: border-box;
-      color: #222;
+    .container section {
+      margin-bottom: 5%;
     }
 
-    .logo-bar.white-box {
-      background-color: #fff;
-      color: #000;
-    }
-
-    .step {
-      padding: 14px 0;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    .divider {
-      border-bottom: 1px solid #ccc;
-      margin: 0;
-      height: 0;
-    }
-
-    .cta {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .cta-button {
-      background: black;
-      color: white;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 999px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: #333;
-    }
-
+    /* Header & Hero Section */
     .logo-bar {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: 20px;
       text-align: center;
@@ -87,9 +43,82 @@
       object-fit: contain;
     }
 
-    .x-img {
-      height: 20px;
-      opacity: 0.3;
+    .hero {
+      width: 100%;
+      aspect-ratio: 16 / 4;
+      background: url('/static/Banner.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 30px;
+      color: white;
+    }
+
+    /* Instructions & Terms */
+    .instructions{
+      width: 70%;
+      max-width: 70%;
+      margin: 40px auto;
+    }
+
+    .terms-section {
+      width: 90%;
+      max-width: 90%;
+      margin: 40px auto;
+    }
+
+    .instructions h2,
+    .hotels h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .step {
+      padding: 14px 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #000;
+    }
+
+    .divider {
+      border-bottom: 1px solid #ccc;
+      margin: 0;
+      height: 0;
+    }
+
+    /* CTA Button */
+    .cta {
+      text-align: center;
+      margin-top: 5%;
+    }
+
+    .cta-button {
+      background: black;
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #333;
+    }
+
+    /* Hotel List */
+    .hotels {
+      width: 90%;
+      max-width: 90%;
+      margin: 40px auto;
     }
 
     .hotel-list {
@@ -97,18 +126,22 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 40px;
+      max-width: 200%;
+      padding: 0 40px;
+      box-sizing: border-box;
     }
 
     .hotel-item {
-      max-width: 200px;
+      max-width: 70%;
       text-align: center;
       border-radius: 16px;
       padding: 4px 0;
+      color: #000;
     }
 
     .hotel-item img {
-      width: 140px;
-      height: 140px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -118,15 +151,36 @@
     .hotel-item p {
       margin-top: 12px;
       font-size: 1rem;
+      color: #000;
     }
 
+    footer {
+      background-color: #f5f5f5; /* 밝은 회색 */
+      padding: 60px 40px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #222;
+      border-top: 1px solid #ccc;
+      text-align: left; /* 왼쪽 정렬 */
+    }
+
+    footer h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .logo-img {
         width: 60px;
-      }
-
-      .x-img {
-        height: 16px;
       }
 
       .hotel-item img {
@@ -142,15 +196,12 @@
 
       .logo-bar {
         flex-direction: column;
+        justify-content: center;
         gap: 10px;
       }
 
       .logo-img {
         width: 50px;
-      }
-
-      .x-img {
-        height: 12px;
       }
 
       .hotel-item img {
@@ -164,17 +215,29 @@
 <body>
   <div class="container">
 
-    <!-- ✅ 로고 영역 -->
-    <header class="logo-bar white-box">
-      <img src="/static/AYANA Resort Bali.png" alt="Ayana Logo" class="logo-img">
-      <img src="/static/mul.png" alt="mul1" class="x-img">
-      <img src="/static/KB.jpg" alt="KB Logo" class="logo-img">
-      <img src="/static/mul.png" alt="mul2" class="x-img">
-      <img src="/static/Visa.png" alt="Visa Logo" class="logo-img">
+    <!-- ✅ 전체 헤더: 로고 + 히어로 배너 -->
+    <header class="page-header">
+      <!-- 로고 영역 -->
+      <div class="logo-bar">
+        <img src="/static/AYANA Resort Bali.png" alt="Ayana Logo" class="logo-img">
+        <img src="/static/KB.jpg" alt="KB Logo" class="logo-img">
+        <img src="/static/Visa.png" alt="Visa Logo" class="logo-img">
+      </div>
+
+      <!-- 배너 영역 -->
+      <section class="hero">
+        <h1>KB Visa카드 쓰고 아야나에서 진정한 휴식을 즐겨봐요</h1>
+        <div class="cta">
+          <a href="https://www.ayana.com/ko/bali/" target="_blank" class="cta-button">지금 예약하기</a>
+        </div>
+      </section>
     </header>
 
+    <!-- 🔻 Divider 추가 -->
+    <hr class="section-divider"/>
+
     <!-- ✅ 예약 방법 -->
-    <section class="instructions white-box">
+    <section class="instructions">
       <h2>프로모션 참여 방법</h2>
       <div class="divider"></div>
       <div class="step"><b>Step 1:</b> AYANA 웹사이트 <a href="https://www.ayana.com/ko/bali/" target="_blank">https://www.ayana.com/ko/bali/</a>로 이동</div>
@@ -191,14 +254,16 @@
       <div class="divider"></div>
       <div class="step"><b>Step 7:</b> 결제 섹션에 KB Visa 카드정보 입력하고 카드보증 완료</div>
       <div class="divider"></div>
-
       <div class="cta">
-        <button class="cta-button">지금 예약하기</button>
+        <a href="https://www.ayana.com/ko/bali/" target="_blank" class="cta-button">지금 예약하기</a>
       </div>
     </section>
 
+    <!-- 🔻 Divider 추가 -->
+    <hr class="section-divider"/>
+
     <!-- ✅ 호텔 섹션 -->
-    <section class="hotels white-box">
+    <section class="hotels">
       <h2>프로모션 이용 가능 호텔</h2>
       <div class="hotel-list">
         <div class="hotel-item">
@@ -220,8 +285,9 @@
       </div>
     </section>
 
-    <!-- ✅ 유의사항 -->
-    <section class="terms-section white-box">
+
+    <!-- ✅ 유의사항 (footer 역할) -->
+    <footer>
       <p><strong>[공통 유의사항]</strong><br>
         - 이 행사 혜택은 Visa카드에서 제공합니다.<br>
         - 각 제휴사 프로모션 혜택에 대한 제공조건 및 유의사항은 상세 페이지에서 확인 가능합니다.<br>
@@ -233,7 +299,6 @@
         - 프로모션 예약/이용 기간 내 예약 취소 건은 혜택 제공 대상에서 제외됩니다.<br>
         - 본 프로모션을 통해 제공되는 혜택은 현금으로 교환될 수 없습니다.<br>
       </p>
-
       <p><strong>[금융소비자 보호법 관련 유의사항]</strong><br>
         - 계약을 체결하기 전에 상품설명서와 약관을 확인하시기 바랍니다.<br>
         - 상환능력에 비해 신용카드 사용액이 과도할 경우 귀하의 개인신용평점이 하락할 수 있습니다.<br>
@@ -246,7 +311,6 @@
         *문의: KB국민카드 고객센터(1588-1688)<br>
         준법감시인 심의필 000000-00000-HPM (0000.00.00)<br>
       </p>
-
       <p><strong>[호텔 유의사항]</strong><br>
         - 본 프로모션은 KB국민 Visa 카드를 소지한 고객이 해당 이벤트 페이지 내 예약 링크를 통해 각 호텔별 혜택 제공 조건을 충족하는 방식으로 결제한 경우에 한해 적용됩니다.<br>
         - 호텔 예약, 결제방법 및 이용약관은 호텔별로 상이하므로 각 호텔 프로모션 페이지를 반드시 확인하시기 바랍니다.<br>
@@ -257,8 +321,7 @@
         - 운영 시간, 이용 방법, 취소 규정은 호텔 규정을 따르며 호텔로 직접 문의해 주세요.<br>
         - 본 혜택은 호텔 자체 프로모션, 할인, 쿠폰과 중복 적용되지 않습니다.<br>
       </p>
-    </section>
-
+    </footer>
   </div>
 </body>
 </html>
