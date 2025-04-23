@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa x AYANA 프로모션</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --gray: #f5f5f5;
+      --dark: #222;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: white;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      background: url('/static/Banner.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    header p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .cta-button {
+      background: white;
+      color: var(--primary);
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .cta-button:hover {
+      background: #eee;
+    }
+    section {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+    section h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .steps, .hotels {
+      display: grid;
+      gap: 24px;
+    }
+    .steps {
+      grid-template-columns: 1fr;
+    }
+    .step-box {
+      background: var(--gray);
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .hotels {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .hotel-card {
+      text-align: center;
+    }
+    .hotel-card img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    .hotel-card p {
+      margin-top: 12px;
+      font-weight: 500;
+    }
+    footer {
+      background: var(--gray);
+      padding: 40px 20px;
+      font-size: 0.95rem;
+    }
+    footer p {
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>33% Visa 특별 프로모션</h1>
+    <p>AYANA 리조트에서만 제공되는 단독 혜택을 만나보세요</p>
+    <a href="#" class="cta-button">지금 예약하기</a>
+  </header>
+
+  <section>
+    <h2>예약 방법</h2>
+    <div class="steps">
+      <div class="step-box"><strong>1단계:</strong> AYANA 공식 웹사이트 접속</div>
+      <div class="step-box"><strong>2단계:</strong> 체크인/체크아웃 날짜 선택</div>
+      <div class="step-box"><strong>3단계:</strong> 예약 코드 입력 (KB 프로모션 코드)</div>
+      <div class="step-box"><strong>4단계:</strong> 객실 카테고리 및 요금 옵션 선택</div>
+      <div class="step-box"><strong>5단계:</strong> KB Visa 카드로 결제</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>참여 호텔</h2>
+    <div class="hotels">
+      <div class="hotel-card">
+        <img src="/static/RIMBA by AYANA Bali.jpg" alt="RIMBA">
+        <p>RIMBA by AYANA Bali</p>
+      </div>
+      <div class="hotel-card">
+        <img src="/static/AYANA Resort Bali.jpg" alt="Resort">
+        <p>AYANA Resort Bali</p>
+      </div>
+      <div class="hotel-card">
+        <img src="/static/Ayana Segara.jpg" alt="Segara">
+        <p>Ayana Segara</p>
+      </div>
+      <div class="hotel-card">
+        <img src="/static/AYANA Villas Bali.jpg" alt="Villas">
+        <p>AYANA Villas Bali</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>유의사항</strong></p>
+    <p>본 프로모션은 Visa카드를 통해 결제 시에만 적용됩니다. 예약 및 환불 정책은 호텔별로 상이할 수 있으며, 자세한 사항은 공식 웹사이트를 참고하시기 바랍니다.</p>
+    <p>문의: KB국민카드 고객센터 1588-1688</p>
+  </footer>
+</body>
+</html>
