@@ -122,22 +122,26 @@
     }
 
     .hotel-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      max-width: 200%;
-      padding: 0 40px;
-      box-sizing: border-box;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    align-items: flex-start; /* 중앙 정렬이 아니라 '위쪽' 기준 정렬로 바꿔줌 */
+  }
 
-    .hotel-item {
-      max-width: 70%;
-      text-align: center;
-      border-radius: 16px;
-      padding: 4px 0;
-      color: #000;
-    }
+  .hotel-item {
+    width: 220px; /* 고정 너비 지정 */
+    text-align: center;
+    border-radius: 16px;
+    padding: 4px 0;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 
     .hotel-item img {
       width: 200px;
@@ -152,6 +156,20 @@
       margin-top: 12px;
       font-size: 1rem;
       color: #000;
+    }
+
+    .hotel-name {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 12px;
+      color: #000;
+    }
+
+    .room-info {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.5;
+      margin-top: 6px;
     }
 
     footer {
@@ -267,23 +285,32 @@
       <h2>프로모션 이용 가능 호텔</h2>
       <div class="hotel-list">
         <div class="hotel-item">
-          <img src="../static/RIMBA by AYANA Bali.jpg" alt="RIMBA" />
-          <p>RIMBA by AYANA Bali</p>
+          <img src="/static/RIMBA by AYANA Bali.jpg" alt="RIMBA" class="circle-img" />
+          <p><strong>RIMBA by AYANA Bali</strong></p>
+          <p class="room-info">※ 적용 객실: Resort View Room, Jimbaran Bay Room,<br>
+            Wana Resort View Room, Wana Garden View Room,<br>
+            Wana Ocean View Room</p>
         </div>
         <div class="hotel-item">
-          <img src="../static/AYANA Resort Bali.jpg" alt="Resort" />
-          <p>AYANA Resort Bali</p>
+          <img src="/static/AYANA Resort Bali.jpg" alt="Resort" class="circle-img" />
+          <p><strong>AYANA Resort Bali</strong></p>
+          <p class="room-info">※ 적용 객실: Resort View Room, Jimbaran Bay Room,<br>
+            Ocean View Room</p>
         </div>
         <div class="hotel-item">
-          <img src="../static/Ayana Segara.jpg" alt="Segara" />
-          <p>Ayana Segara</p>
+          <img src="/static/Ayana Segara.jpg" alt="Segara" class="circle-img" />
+          <p><strong>Ayana Segara</strong></p>
+          <p class="room-info">※ 적용 객실: Resort View Room, Jimbaran Bay Room,<br>
+            Ocean View Room</p>
         </div>
         <div class="hotel-item">
-          <img src="../static/AYANA Villas Bali.jpg" alt="Villas" />
-          <p>AYANA Villas Bali</p>
+          <img src="/static/AYANA Villas Bali.jpg" alt="Villas" class="circle-img" />
+          <p><strong>AYANA Villas Bali</strong></p>
+          <p class="room-info">※ 적용 객실: 1BR Ocean View Villa</p>
         </div>
       </div>
     </section>
+    
 
 
     <!-- ✅ 유의사항 (footer 역할) -->
